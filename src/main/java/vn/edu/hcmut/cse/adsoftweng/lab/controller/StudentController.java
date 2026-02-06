@@ -3,6 +3,7 @@ package vn.edu.hcmut.cse.adsoftweng.lab.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -19,10 +20,12 @@ public class StudentController {
         this.studentService = studentService;
     }
 
+    @GetMapping
     public List<Student> getAll(){
         return studentService.getAll();
     }
 
+    @GetMapping("/{id}")
     public Student getById(String id){
         return studentService.getById(id);
     }

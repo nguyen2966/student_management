@@ -11,4 +11,20 @@ public class Student {
     private String name;
     private String email;
     private int age;
+
+    public String getId(){
+        return this.id;
+    }
+
+    public String getName(){
+        return this.name;
+    }
+    
+    public String getEmail(){
+        return this.email;
+    }
+
+    public int getAge(){
+        return this.age;
+    }
 }
