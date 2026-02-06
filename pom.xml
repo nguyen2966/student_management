@@ -49,6 +49,20 @@
 			<artifactId>spring-boot-starter-webmvc-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+		<!-- SQLite JDBC Driver -->
+		<dependency>
+			<groupId>org.xerial</groupId>
+			<artifactId>sqlite-jdbc</artifactId>
+			<version>3.41.2.1</version>
+		</dependency>
+
+		<!-- Hibernate Dialect cho SQLite -->
+		<dependency>
+			<groupId>org.hibernate.orm</groupId>
+			<artifactId>hibernate-community-dialects</artifactId>
+			<version>6.2.4.Final</version>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -61,3 +75,4 @@
 	</build>
 
 </project>
+
