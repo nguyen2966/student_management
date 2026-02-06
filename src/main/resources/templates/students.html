@@ -28,10 +28,19 @@ th:* -->
     th {
       background-color: #f2f2f2;
     }
+
+    .text-danger{
+      background-color: red;
+    }
   </style>
 </head>
 
 <body>
+  <form action="/students" method="GET">
+    <input type="text" name="keyword" placeholder="Nhập tên..." />
+    <button type="submit">Tìm</button>
+  </form>
+
   <h1>Danh Sách Sinh Viên (SSR)</h1>
   <table>
     <thead>
@@ -45,7 +54,7 @@ th:* -->
     <tbody>
       <!-- Cú pháp Thymeleaf: Duyệt qua danh sách "dsSinhVien" -->
       <!-- th:each="biến_tạm : ${key_trong_model}" -->
-      <tr th:each="student : ${dsSinhVien}">
+      <tr th:each="student : ${dsSinhVien}" th:class="${student.age < 18} ? 'text-danger' : ''">
         <td th:text="${student.id}">ID Mẫu</td>
         <td th:text="${student.name}">Tên Mẫu</td>
         <td th:text="${student.email}">Email Mẫu</td>
