@@ -63,6 +63,12 @@
 			<artifactId>hibernate-community-dialects</artifactId>
 			<version>6.2.4.Final</version>
 		</dependency>
+
+		<!-- Thymeleaf: Template Engine để tạo giao diện HTML -->
+		<dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
 	</dependencies>
 
 	<build>
