@@ -35,18 +35,16 @@ th:* -->
 </head>
 
 <body>
-  <form action="/students" method="GET">
+  <h1>Danh Sách Sinh Viên (SSR)</h1>
+  <div class="d-flex justify-content-start align-items-center gap-5">
+    <a th:href="@{/students/create-form}" class="btn btn-success btn-sm">
+      Thêm sinh viên
+    </a>
+
+    <form action="/students" method="GET">
     <input type="text" name="keyword" placeholder="Nhập tên..." />
     <button type="submit">Tìm</button>
   </form>
-
-  
-
-  <h1>Danh Sách Sinh Viên (SSR)</h1>
-  <div>
-    <a th:href="@{/students/create-form}" class="btn btn-success btn-sm" style="margin-top: 10px;">
-      Thêm sinh viên
-    </a>
   </div>
   <table>
     <thead>
