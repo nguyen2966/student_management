@@ -61,7 +61,7 @@ th:* -->
     <tbody>
       <!-- Cú pháp Thymeleaf: Duyệt qua danh sách "dsSinhVien" -->
       <!-- th:each="biến_tạm : ${key_trong_model}" -->
-      <tr th:each="student : ${dsSinhVien}" th:class="${student.age < 18} ? 'bs-danger' : ''">
+      <tr th:each="student : ${dsSinhVien}" th:class="${student.age < 18} ? 'bg-danger' : ''">
         <td th:text="${student.id}">ID Mẫu</td>
         <td th:text="${student.name}">Tên Mẫu</td>
         <td th:text="${student.email}">Email Mẫu</td>
