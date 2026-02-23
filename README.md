@@ -5,19 +5,9 @@
 | **2312562** | Lữ Quốc Pháp | 
 
 # Deploy Web service
-
-<img width="1456" height="258" alt="image" src="https://github.com/user-attachments/assets/6d69944c-c263-4128-bfb1-d2676f4ca780" />
-
-Nhóm đã deploy thành công dự án lên Render, có thể truy cập tại
-
-**https://student-management-1khi.onrender.com/students**
-
-* Khi truy cập sẽ hiển thị giao diện như hình dưới. Tuy nhiên, Render free tier sẽ cho sleep service sau 15 phút không có người truy cập nên thời gian khởi động ở các lần truy cập có thể mất từ 1-5 phút
-
-<img width="1895" height="867" alt="image" src="https://github.com/user-attachments/assets/7470aad7-b4b6-4498-8f89-3cbde6489f86" />
-
-
-
+Ứng dụng đã được triển khai trực tuyến tại:
+**[https://student-management-1khi.onrender.com/students](https://student-management-1khi.onrender.com/students)**
+> **Lưu ý:** Do sử dụng Render Free Tier, dịch vụ sẽ tự động "đi ngủ" sau 15 phút không hoạt động. Thời gian khởi động lại (Cold Start) có thể mất từ 1-5 phút.
 
 # Lab 1: Khởi Tạo & Kiến Trúc Hệ Thống
 ## Bài tập 
