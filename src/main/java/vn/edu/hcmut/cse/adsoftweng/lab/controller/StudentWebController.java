@@ -1,5 +1,7 @@
 package vn.edu.hcmut.cse.adsoftweng.lab.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,9 +12,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import vn.edu.hcmut.cse.adsoftweng.lab.service.StudentService;
 import vn.edu.hcmut.cse.adsoftweng.lab.entity.Student;
-import java.util.List;
+import vn.edu.hcmut.cse.adsoftweng.lab.service.StudentService;
 
 @Controller
 @RequestMapping("/students")
@@ -42,13 +43,6 @@ public class StudentWebController {
     return "studentInfo";
   }
 
-  @GetMapping("/{id}/edit")
-  public String showEditForm(@PathVariable("id") String id, Model model) {
-      Student student = service.getById(id);
-      model.addAttribute("student", student); // Dùng tên "student" cho thống nhất
-      return "editStudent"; // Tên file HTML
-  }
-
   @PostMapping("/{id}/update")
   public String updateStudent(@PathVariable("id") String id, @ModelAttribute("student") Student formStudent) {
       // 1. Lấy dữ liệu cũ đang "xịn" từ DB ra
@@ -65,6 +59,13 @@ public class StudentWebController {
       }
       
       return "redirect:/students/" + id;
+  }
+
+  @PostMapping("/{id}/delete")
+  public String deleteStudent(@PathVariable("id") String id){
+    Student student = service.getById(id);
+    service.delete(student);
+    return "redirect:/students";
   }
 }
 
