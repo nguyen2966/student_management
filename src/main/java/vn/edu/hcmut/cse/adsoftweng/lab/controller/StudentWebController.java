@@ -43,6 +43,13 @@ public class StudentWebController {
     return "studentInfo";
   }
 
+   @GetMapping("/{id}/edit")
+    public String showEditForm(@PathVariable("id") String id, Model model) {
+        Student student = service.getById(id);
+        model.addAttribute("student", student);
+        return "editStudent";
+    }
+
   @PostMapping("/{id}/update")
   public String updateStudent(@PathVariable("id") String id, @ModelAttribute("student") Student formStudent) {
       // 1. Lấy dữ liệu cũ đang "xịn" từ DB ra
@@ -67,6 +74,16 @@ public class StudentWebController {
     service.delete(student);
     return "redirect:/students";
   }
-}
 
+  @PostMapping("/create")
+  public String createStudent(@ModelAttribute("student") Student student){
+    service.save(student);
+    return "redirect:/students";
+  }
+
+  @GetMapping("/create-form")
+  public String getCreateForm(){
+    return "createStudent";
+  }
+}
 

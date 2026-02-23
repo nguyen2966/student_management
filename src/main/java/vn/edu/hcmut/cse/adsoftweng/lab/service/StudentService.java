@@ -30,7 +30,7 @@ public class StudentService {
     }
 
     public void save(Student student) {
-        studentRepository.save(student); // Hàm save này là của Spring Data JPA
+        studentRepository.save(student);
     }
 
     public void delete(Student student){
