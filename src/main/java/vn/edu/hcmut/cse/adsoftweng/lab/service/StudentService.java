@@ -28,4 +28,8 @@ public class StudentService {
     public List<Student> searchByName(String keyword){
         return studentRepository.findByNameContainingIgnoreCase(keyword);
     }
+
+    public void save(Student student) {
+        studentRepository.save(student); // Hàm save này là của Spring Data JPA
+    }
 }

@@ -16,6 +16,22 @@ public class Student {
         return this.id;
     }
 
+    public void setId(String id){
+        this.id = id;
+    }
+
+    public void setName(String name){
+        this.name = name;
+    }
+
+    public void setEmail(String email){
+        this.email = email;
+    }
+
+    public void setAge(int age){
+        this.age = age;
+    }
+
     public String getName(){
         return this.name;
     }
