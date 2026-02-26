@@ -9,6 +9,33 @@
 **[https://student-management-1khi.onrender.com/students](https://student-management-1khi.onrender.com/students)**
 > **Lưu ý:** Do sử dụng Render Free Tier, dịch vụ sẽ tự động "đi ngủ" sau 15 phút không hoạt động. Thời gian khởi động lại (Cold Start) có thể mất từ 1-5 phút.
 
+# Hướng dẫn chạy dự án
+Nếu muốn chạy ở local thì ta thực hiện các bước:
+1. **Tạo database**
+   * Cài đặt docker
+   * Chạy lệnh sau để tải image của postgres SQL và tạo container
+     ```
+     docker run -d --name cnpmnc_postgre -e POSTGRES_PASSWORD=123456 -e POSTGRES_DB=student_management -p 5433:5432
+     ```
+     Lệnh này sẽ tạo ra một container chạy database có tên student_management trên port 5433, mật khẩu là 123456
+   * Để dễ dàng thao tác trên database, ta cài đặt công cụ trực quan hóa có tên TablePlus: https://tableplus.com/. Sau khi cài đặt, ta mở phần mềm và tạo kết nối
+     <img width="1432" height="802" alt="image" src="https://github.com/user-attachments/assets/2663ab34-2aac-411d-9476-4f8111c1d11e" />
+   * Sau khi bấm create, ta nhập các giá trị như trên hình vào màn hình kết nối
+     <img width="672" height="706" alt="image" src="https://github.com/user-attachments/assets/ffcffb15-6b7a-4a06-9d01-ddd1abca43d5" />
+   * Sau khi kết nối thành công, ta chạy lệnh tạo bảng và insert dữ liệu như lab 1.
+2. **Setup dự án**
+   * Clone dự án về máy
+   * Vào file application.properties để thêm các biến môi trường
+     <img width="854" height="148" alt="image" src="https://github.com/user-attachments/assets/4b34297d-1a4c-46ef-8e92-e387743bd002" />
+   * Sau cùng, dùng lệnh sau để chạy dự án:
+     ```
+     ./mvnw spring-boot:run
+     ```
+   Truy cập vào đường dẫn localhost:8080/students để xem kết quả
+
+   Trong quá trình setup, việc ta trực tiếp ghi các thông tin của database local vào file property là nhằm mục đích phát triển và kiểm tra nhanh chóng. Khi deploy lên render, các biến môi trường sẽ được cung cấp bí mật và render sẽ đọc các biến này. 
+
+
 # Lab 1: Khởi Tạo & Kiến Trúc Hệ Thống
 ## Bài tập 
 
